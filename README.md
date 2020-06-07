@@ -7,11 +7,10 @@
  
  <body>
 <h1>Event Registration Appliaction</h1>
-<img src="1.PNG">
-  <video width="400">
-  <source src="/Video_ASP.mp4" type="video/mp4">
-</video>
-
+<img src="1.PNG"><br>
+<iframe width="560" height="315"
+src="https://www.youtube.com/watch?v=-b4JyEwra2I&t=30s"frameborder="0" 
+allowfullscreen></iframe>
 
 A Progressive Web Application (PWA) made using Angular 7, Angular Material and Bootstrap is a desktop and mobile-friendly application. The traditional idea to make different applications for various devices is challenged by PWAs in Angular, which is a lightweight app making it easier for the user to experience the app in any device of their choice.
 
@@ -34,4 +33,5 @@ The objective of this application is to make a prototype of the idea and give us
   <li>Notification to the Admin about the new registrations.</li>
  </ul>
 
+<
 </body>
