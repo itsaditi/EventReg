@@ -1,3 +1,11 @@
+<html>
+<head>
+ <noscript>
+<meta name="google-site-verification" content="y9w7d9GH1y7qn5LPpB2L36LSFh1xGxcg4k542inOuoM" />   
+ </noscript>
+ </head>
+ 
+ <body>
 <h1>Event Registration Appliaction</h1>
 ![EventReg](1.PNG)
 ![EventReg](Video_ASP.webm)
@@ -17,3 +25,4 @@ The objective of this application is to make a prototype of the idea and give us
 - [  ] Implementing analytics for the Admin user with components like Dashboards.
 - [  ] Implementing the ability to send push notification from the application to the participants.
 - [  ] Notification to the Admin about the new registrations.
+</body>
