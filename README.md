@@ -9,7 +9,7 @@
 <h1>Event Registration Appliaction</h1>
 <img src="1.PNG">
   <video width="400" controls>
-  <source src="Video_ASP.mp4" type="video/mp4">
+  <source src="/Video_ASP.mp4" type="video/mp4">
 </video>
 
 
