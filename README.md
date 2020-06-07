@@ -1,5 +1,5 @@
 <h1>Event Registration Appliaction</h1>
-![EventReg](Screenshot/1.png)
+![EventReg](Screenshots and Video/1.png)
 
 A Progressive Web Application (PWA) made using Angular 7, Angular Material and Bootstrap is a desktop and mobile-friendly application. The traditional idea to make different applications for various devices is challenged by PWAs in Angular, which is a lightweight app making it easier for the user to experience the app in any device of their choice.
 
