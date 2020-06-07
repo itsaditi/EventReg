@@ -1,0 +1,70 @@
+/* mat-card{
+    box-shadow: 5px 6px 7px grey;
+    background-color: white;
+    margin: 18%;
+    margin-top: 4%;
+    padding: 4%;
+} */
+form{
+    margin: 0.5%;
+}
+h3{
+    text-align: center;
+}
+
+.bold-label{
+    font-weight: bold;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    /* background-color: #e9ecef; */
+    opacity: 1;
+}
+
+.mat-step-icon {
+    background: wheat;
+}
+.bg {
+    /* The image used */
+    background-image: url("/assets/backgroundimg10.jpg");
+  
+    /* Full height */
+    height: 50%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+.leftmargin{
+    margin-left: 1.5%;
+}
+@media only screen and (max-width: 600px) {
+    mat-card{
+        bottom: 312px;
+
+        box-shadow: 2px 1px 7px grey;
+        background-color: white;
+        margin: 5%;
+        margin-top: 2%;
+        padding: 6%;
+    }
+    mat-vertical-stepper{
+        margin-left: -6%;
+
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    mat-card{
+            bottom: 332px;
+
+        box-shadow: 5px 6px 7px grey;
+        background-color: white;
+        margin: 18%;
+        margin-top: 1%;
+        padding: 2%;
+    }
+  }

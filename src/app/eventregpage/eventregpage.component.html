@@ -1,0 +1,273 @@
+<div class="bg"></div>
+
+<mat-card class="matcard">
+
+    <h3>Event Registration Form</h3>
+    <hr>
+    <!-- <form>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" placeholder="Eg: Jane" class="form-control" id="firstname" aria-describedby="firstname">
+                  </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="middlename">Middle Name</label>
+                    <input type="text" placeholder="If any" class="form-control" id="middlename" aria-describedby="middlename">
+                  </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" placeholder="Eg: Doe" class="form-control" id="lastname" aria-describedby="lastname">
+                  </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="mobileno">Mobile No</label>
+                    <input type="number" placeholder="XXXXXXXXXX" class="form-control" id="mobileno" aria-describedby="mobileno">
+                  </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="emailid">Email id</label>
+                    <input type="email" placeholder="Eg: jane@email.com" class="form-control" id="emailid" aria-describedby="firstname">
+                  </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="regtype">Registration type</label>
+                    <select class="form-control" id="regtype">
+                        <option>Self</option>
+                        <option>Group</option>
+                        <option>Corporate</option>
+                        <option>Others</option>
+                      </select>                   
+                  </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="nooftickets">No. of tickets</label>
+                    <input type="number" placeholder="X" class="form-control" value=1 id="emailid" aria-describedby="firstname">
+                  </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form> -->
+  
+
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+        <mat-step  [stepControl]="firstFormGroup">
+            <form  #f="ngForm" (ngSubmit)="onSave(f.value)" >
+                <ng-template matStepLabel>Fill your details</ng-template>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>First Name <span class="text-danger">*</span></label>
+                            <input   type="text" required name="firstname"  
+                            [(ngModel)]="newuser.firstname" #firstname="ngModel" 
+                            [ngModelOptions]="{standalone: true}"
+                            placeholder="Eg: Jane" class="form-control" id="firstname"
+                                aria-describedby="firstname" >
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Middle Name</label>
+                            <input  type="text" name="middlename"  [(ngModel)]="newuser.middlename" #middlename="ngModel" [ngModelOptions]="{standalone: true}" placeholder="If any" class="form-control" id="middlename" 
+                            aria-describedby="middlename" >
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input   type="text" required placeholder="Eg: Doe"  name="lastname"  [(ngModel)]="newuser.lastname" #lastname="ngModel" [ngModelOptions]="{standalone: true}" class="form-control" id="lastname"
+                                aria-describedby="lastname">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="mobileno">Mobile No</label>
+                            <input  type="number" required pattern="^[0-9]{10}$" placeholder="XXXXXXXXXX"  name="mobileno"  [(ngModel)]="newuser.mobileno" #mobileno="ngModel" [ngModelOptions]="{standalone: true}" class="form-control" id="mobileno"
+                                aria-describedby="mobileno">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="emailid">Email id</label>
+                            <input  type="email"  required placeholder="Eg: jane@email.com"  name="emailid"  [(ngModel)]="newuser.emailid" #emailid="ngModel" [ngModelOptions]="{standalone: true}"  class="form-control" id="emailid"
+                                aria-describedby="emailid">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="regtype">Registration type</label>
+                            <select  class="form-control" required placeholder="Select one"   name="regtype"  [(ngModel)]="newuser.regtype" #regtype="ngModel" [ngModelOptions]="{standalone: true}"  id="regtype">
+                                <option>Self</option>
+                                <option>Group</option>
+                                <option>Corporate</option>
+                                <option>Others</option>
+                            </select>
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="nooftickets">No. of tickets</label>
+                            <input  type="number"  placeholder="X" name="nooftickets" 
+                             [(ngModel)]="newuser.nooftickets" #nooftickets="ngModel" 
+                             [ngModelOptions]="{standalone: true}" class="form-control" [value]=1 id="nooftickets"
+                                aria-describedby="nooftickets">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button  type="submit" class="btn btn-primary" [disabled]="!f.form.valid" matStepperNext>Submit & Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step *ngIf="newuser_bool" [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>Upload your photo</ng-template>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="material-icons" style="font-size:126px;color:grey" *ngIf="!imgURL">add_a_photo</i>
+                        <img [src]="imgURL" height="200" *ngIf="imgURL">
+                    </div>
+                    <div class="col-sm-6">
+                        <input #file type="file" accept='image/*' (change)="preview(file.files)" />
+                    </div>
+                </div><br>
+                <div>
+                    <button class="btn btn-primary"  matStepperPrevious>Back</button>
+                    <button class="btn btn-primary leftmargin" (click)="photoupload_bool = ! photoupload_bool"  matStepperNext>Submit & Next </button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step *ngIf="photoupload_bool" [stepControl]="thirdFormGroup">
+            <!-- <ng-template matStepLabel>Preview and Submit</ng-template> -->
+
+            <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>Preview the form</ng-template>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="firstname" class="bold-label">First Name:</label><br>{{newuser.firstname}}
+                            <!-- <input type="text" placeholder="Eg: Jane" readonly [(ngModel)]="newuser.firstname" value="{{newuser.firstname}}" #firstname="ngModel" class="form-control" id="firstname"
+                                aria-describedby="firstname"> -->
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group"> 
+                            <label for="middlename" class="bold-label">Middle Name</label><br>{{newuser.middlename}}
+                            <!-- <input type="text" placeholder="If any" class="form-control" [(ngModel)]="newuser.lastname" id="middlename"
+                                aria-describedby="middlename"> -->
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="lastname" class="bold-label">Last Name</label><br>{{newuser.lastname}}
+                            <!-- <input type="text" placeholder="Eg: Doe" class="form-control" id="lastname"
+                                aria-describedby="lastname"> -->
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group" >
+                            <label for="mobileno" class="bold-label">Mobile No</label><br>{{newuser.mobileno}}
+                            <!-- <input type="number" placeholder="XXXXXXXXXX" class="form-control" id="mobileno"
+                                aria-describedby="mobileno"> -->
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="emailid" class="bold-label">Email id</label><br>{{newuser.emailid}}
+                            <!-- <input type="email" placeholder="Eg: jane@email.com" class="form-control" id="emailid"
+                                aria-describedby="firstname"> -->
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="regtype" class="bold-label">Registration type</label><br>{{newuser.regtype}}
+                            <!-- <select class="form-control" id="regtype">
+                                <option>Self</option>
+                                <option>Group</option>
+                                <option>Corporate</option>
+                                <option>Others</option>
+                            </select> -->
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group" class="bold-label">
+                            <label for="nooftickets"  class="bold-label">No. of tickets</label><br>{{newuser.nooftickets}}
+        
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn btn-primary"  matStepperPrevious>Back</button> 
+                    <button class="btn btn-primary leftmargin" (click)="stepper.reset()" matStepperNext>Edit</button>                
+
+                    <button class="btn btn-primary leftmargin" (click)="regno()" matStepperNext>Next</button>                
+                </div>
+            </form>
+          
+        </mat-step>
+        <mat-step *ngIf="regno_bool">
+            <ng-template matStepLabel>Done</ng-template>
+            <p>Conguratulations ! Your registration no. is-</p>
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-body">
+                  <p class="card-text">{{userregno}}</div>
+              </div>
+            <div>
+                <button class="btn btn-primary" matStepperPrevious>Back</button>
+                <button  class="btn btn-primary leftmargin" (click)="refreshPage()" >New registration</button>
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+
+
+
+</mat-card>

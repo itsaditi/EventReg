@@ -1,0 +1,78 @@
+<div class="bg"></div>
+
+
+<mat-card class="matcard">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Build your way from frontend to backend with stackhack 1.0</h2>
+      <p>Presenting a psuedo progressive web application to register for a event. You can view this application on your desktop and mobile.</p>
+      <div class="card">
+        <div class="card-header">
+          <h4>For Participants</h4>
+        </div>
+        <div class="card-body">
+          <button class="btn btn-primary btn-lg btn-block" [routerLink]="['eventregpage']" >Register for the event !</button>
+
+        </div>
+      </div>
+    </div> <br><br>
+    <div class="col-sm-6">
+      <div class="card">
+          <div class="card-header">
+            <h4>Login (For Admin users only)</h4>
+          </div>
+          <div class="card-body" style="padding:13.5%">
+
+              <form #f="ngForm" (ngSubmit)="OnSave(f.value)">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Username" ngModel name="username"  aria-label="Username" aria-describedby="basic-addon1" required>
+                  <div class="input-group-append">
+                    <span class="input-group-text">@</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" [(ngModel)]="password" type="password" id="inputPassword"  
+                  name="password"  [type]="hide ? 'password' : 'text'" placeholder="*******"  
+                  required aria-label="Username" aria-describedby="basic-addon1">
+                  <div class="input-group-append">
+                    <span class="input-group-text">
+                      <mat-icon  type="button" class="placeholder" (click)="myFunction()">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]=!f.form.valid>Login</button>
+
+          </form>
+          </div>
+      </div>
+     
+   
+    </div>
+  </div>
+  <br>
+  <div class="card">
+        
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-6">
+          Technology used- Angular JS/ 7 | Angular Material | Bootstrap | HTML 5 | CSS 3
+
+        </div>
+        <div class="col-sm-6">
+          Submission by- <a href="https://github.com/itsaditi">Aditi S Patade</a>
+
+        </div>
+      </div>
+    
+    </div>
+
+  </div>
+
+</mat-card>
