@@ -1,5 +1,5 @@
 <h1>Event Registration Appliaction</h1>
-![EventReg](1.png)
+![EventReg](1.PNG)
 ![EventReg](Video_ASP.webm)
 
 
